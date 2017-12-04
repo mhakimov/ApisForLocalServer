@@ -1,7 +1,6 @@
-package com.zetcode.res;
+package com.zetcode.apis;
 
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -15,13 +14,11 @@ public class MyMessage {
         return "Salam donya!\n";
     }
 
-    @Path("1")
-    @POST
-  //  @Produces(MediaType.TEXT_PLAIN)
-    @Produces(MediaType.APPLICATION_JSON)
-
-    public String getMessage2(int number ) {
-
-        return "Salam !\n" + number;
-    }
+//    @Path("yy")
+//    @POST
+//    @Produces("application/json")
+//    public CalculationRequest getMessage2(CalculationRequest cr) {
+//        cr.name += cr.name;
+//        return cr;//"Salam!\n" + cr.name;
+//    }
 }

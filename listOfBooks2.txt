@@ -1,0 +1,36 @@
+[{
+	"name": "The Odyssey",
+	"author": "Homer"
+},
+{
+	"name": "King Lear",
+	"author": "William Shakespeare"
+},
+{
+	"name": "War and Peace",
+	"author": "Leo Tolstoy"
+},
+{
+	"name": "The Divine Comedy",
+	"author": "Dante Alighieri"
+},
+{
+	"name": "Cossacs",
+	"author": "Leo Tolstoy"
+},
+{
+	"name": "Iliad",
+	"author": "Homer"
+},
+{
+	"name": "One Hunderd Years of Solitude",
+	"author": "Gabriel Garcia Marquez"
+},
+{
+	"name": "Hamlet",
+	"author": "William Shakespeare"
+},
+{
+	"name": "Old man and sea",
+	"author": "Hemmingway"
+}]

@@ -1,0 +1,6 @@
+
+{
+"name":"King Lear",
+"author":"William Shakespeare"
+}
+Old man and sea / Hemmingway;
