@@ -26,8 +26,6 @@ public class Books2 {
 
     String location = "C:\\Users\\mhakimov\\ApisForLocalServer\\listOfBooks2.txt";
     Helper helper = new Helper();
-    ObjectMapper mapper = new ObjectMapper();
-
 
 
     @GET
@@ -35,8 +33,7 @@ public class Books2 {
     public BooksResponse getMessage(@QueryParam("author") String author1, @QueryParam("name") String name1 ) throws IOException {
 
         BooksResponse toReturn = new BooksResponse();
-//        List<Book> lb = helper.readJsonFile(location);
-        List<Book> lb = mapper.readValue(new File(location), new TypeReference<List<Book>>() {});
+       List<Book> lb = helper.readJsonFile(location);
 
         toReturn.books = helper.filterOutRequiredBooks(author1, name1, lb);
         return toReturn;
@@ -49,10 +46,11 @@ public class Books2 {
     public BooksResponse getMessage2(BooksAddRequest bar) throws IOException {
         BooksResponse toReturn = new BooksResponse();
 
-        List<Book> lb = mapper.readValue(new File(location), new TypeReference<List<Book>>() {});
-lb.add(bar.book);
-        mapper.writeValue(new File(location), lb);
-toReturn.books = lb;
+        List<Book> lb = helper.readJsonFile(location);
+
+        lb.add(bar.book);
+        helper.writeJsonFile(location, lb);
+        toReturn.books = lb;
 
         return toReturn;
     }
@@ -63,12 +61,11 @@ toReturn.books = lb;
     public BooksResponse deleteBook(@QueryParam("author") String author1, @QueryParam("name") String name1 ) throws IOException {
 
         BooksResponse toReturn = new BooksResponse();
-        List<Book> lb = mapper.readValue(new File(location), new TypeReference<List<Book>>() {});
+        List<Book> lb = helper.readJsonFile(location);
 
         lb = helper.deleteRequiredBook(author1, name1, lb);
 
-        mapper.writeValue(new File(location), lb);
-
+        helper.writeJsonFile(location, lb);
         toReturn.books = lb;
         return toReturn;
     }

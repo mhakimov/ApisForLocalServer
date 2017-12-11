@@ -79,6 +79,11 @@ public class Helper {
         return new ObjectMapper().readValue(new File(fileLocation), new TypeReference<List<Book>>() {});
     }
 
+    public void writeJsonFile(String fileLocation, List<Book> listOfBooks) throws IOException {
+
+        new ObjectMapper().writeValue(new File(fileLocation), listOfBooks);
+    }
+
 
     public List<Book> deleteRequiredBook(String author, String name, List<Book> books){
 
@@ -86,7 +91,8 @@ public class Helper {
                 (books.stream().filter(x -> x.author.equals(author) && x.name.equals(name)).collect(Collectors.toList()));
 
         return books;
-
-
     }
+
+
+
 }
